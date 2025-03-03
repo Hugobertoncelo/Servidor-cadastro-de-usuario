@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Configurar CORS para permitir requisições do frontend
 app.use(cors({
-  origin: 'https://cadastro-usuario-mocha.vercel.app', // Domínio do seu frontend
+  origin: 'https://cadastro-usuario-sigma.vercel.app/', // Domínio do seu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
   allowedHeaders: ['Content-Type'], // Cabeçalhos permitidos
 }));
