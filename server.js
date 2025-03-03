@@ -8,7 +8,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-  origin: '*'
+  origin: 'https://cadastro-usuario-mocha.vercel.app/'
 }));
 
 app.get('/usuarios', async (req, res) => {
