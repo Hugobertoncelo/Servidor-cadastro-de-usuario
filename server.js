@@ -17,7 +17,7 @@ app.get('/usuarios', async (req, res) => {
 })
 
 app.post('/usuarios', async (req, res) => {
-  
+
   const user = await prisma.user.create({
     data: {
       email: req.body.email,
@@ -55,4 +55,4 @@ app.delete('/usuarios/:id', async (req, res) => {
   res.status(204).json({ message: 'Usuario deletado com sucesso' })
 })
 
-app.listen(3000) 
+app.listen(cors()) 
