@@ -7,7 +7,9 @@ const prisma = new PrismaClient()
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}));
 
 app.get('/usuarios', async (req, res) => {
 
@@ -55,4 +57,4 @@ app.delete('/usuarios/:id', async (req, res) => {
   res.status(204).json({ message: 'Usuario deletado com sucesso' })
 })
 
-app.listen(cors()) 
+app.listen(3000) 
