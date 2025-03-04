@@ -6,7 +6,17 @@ const prisma = new PrismaClient()
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+const allowedOrigins = ['http://localhost:5173'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 app.get('/usuarios', async (req, res) => {
   const users = await prisma.user.findMany()
