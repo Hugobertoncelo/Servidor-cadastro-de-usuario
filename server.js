@@ -12,7 +12,10 @@ app.get('/usuarios', async (req, res) => {
   const users = await prisma.user.findMany()
 
   res.status(200).json(users)
+})
 
+app.get('/', (req, res) => {
+  return res.json("hello world")
 })
 
 app.post('/usuarios', async (req, res) => {
